@@ -22,4 +22,23 @@ router.get('/orders', shopController.getOrders);
 
 router.get('/checkout', shopController.getCheckout);
 
+//outer.post('/products/delete/:id', shopController.postDelete);
+
+const Product = require('../models/product');
+
+router.delete('/products/delete/:id', (req, res) => {
+  const productId = req.params.id;
+
+  Product.deleteById(productId)
+    .then(result => {
+      console.log('Product deleted successfully');
+      res.sendStatus(204); // No content
+    })
+    .catch(error => {
+      console.log('Error deleting product:', error);
+      res.sendStatus(500);
+    });
+});
+
+
 module.exports = router;

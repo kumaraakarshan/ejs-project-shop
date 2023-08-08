@@ -28,8 +28,10 @@
                                 </div>
                                 <div class="card__actions">
                                     <a href="/products/<%= product.id %>" class="btn">Details</a>
+                                    <button class="btn delete-button" data-product-id="<%= product.id %>">Delete</button>
                                     <%- include('../includes/add-to-cart.ejs', {product: product}) %>
                                 </div>
+                               
                             </article>
                             <% } %>
                     </div>
