@@ -15,14 +15,7 @@ const shopRoutes = require('./routes/shop');
 const contactRoutes = require('./routes/contact');
 
 
-db.execute('SELECT * from products')
-.then((result)=>{
-    console.log(result[0], result[1]);
 
-})
-.catch(()=>{
-    console.log(err);
-});
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
