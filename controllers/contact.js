@@ -1,8 +1,8 @@
 exports.getcontact = (req, res, next) => {
-    res.sendFile(path.join(__dirname, '../', 'views', 'contact.html'));
-  }
+  res.render('admin/contact'); // Assuming 'contact' is the name of your EJS file in the 'views' directory
+}
 
 exports.postcontact =(req, res, next) => {
 
-    res.redirect('/');
+    res.render('admin/success');
   }
